@@ -73,7 +73,10 @@ namespace RWT.ArgParse
             return extras;
         }
 
-        /// generates a helpful listing of the available arguments.
+        /// <summary>
+        /// Generates a helpful list of the configured options
+        /// </summary>
+        /// <param name="tw">a TextWriter to use for output</param>
         public void ShowOptions(System.IO.TextWriter tw)
         {
             tw.WriteLine("OPTIONS");
@@ -96,6 +99,7 @@ namespace RWT.ArgParse
                     tw.WriteLine($"  {lhs}");
                     tw.WriteLine($"         {rhs}");
                 }
+                tw.WriteLine();
             }
         }
 
