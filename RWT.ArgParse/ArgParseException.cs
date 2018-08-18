@@ -2,7 +2,7 @@
 
 namespace RWT.ArgParse
 {
-    public class ArgParseException : ArgumentException
+    public class ArgParseException : Exception
     {
         internal ArgParseException(String txt) : base(txt)
         {
