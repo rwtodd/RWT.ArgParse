@@ -6,6 +6,7 @@
     <Description>A very minimal cmdline-argument parsing utitlity library.</Description>
     <RepositoryUrl>https://github.com/rwtodd/CSharp.ArgParse</RepositoryUrl>
     <Version>1.0.1</Version>
+    <PackageId>RWT.ArgParse</PackageId>
   </PropertyGroup>
 
 </Project>
