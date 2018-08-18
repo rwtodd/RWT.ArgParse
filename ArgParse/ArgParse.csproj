@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Richard Todd</Authors>
+    <Description>A very minimal cmdline-argument parsing utitlity library.</Description>
+    <RepositoryUrl>https://github.com/rwtodd/CSharp.ArgParse</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
