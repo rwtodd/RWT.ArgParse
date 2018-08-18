@@ -5,7 +5,7 @@
     <Authors>Richard Todd</Authors>
     <Description>A very minimal cmdline-argument parsing utitlity library.</Description>
     <RepositoryUrl>https://github.com/rwtodd/CSharp.ArgParse</RepositoryUrl>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageId>RWT.ArgParse</PackageId>
     <AssemblyName>RWT.ArgParse</AssemblyName>
   </PropertyGroup>

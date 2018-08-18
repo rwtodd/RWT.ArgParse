@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RWT.ArgParse", "RWT.ArgParse\RWT.ArgParse.csproj", "{739828E6-F575-44D7-960D-F04D91538CB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWT.ArgParse.Test", "RWT.ArgParse.Test\RWT.ArgParse.Test.csproj", "{D24075C4-01C1-4C73-AA53-8584760C0C01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{739828E6-F575-44D7-960D-F04D91538CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{739828E6-F575-44D7-960D-F04D91538CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{739828E6-F575-44D7-960D-F04D91538CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24075C4-01C1-4C73-AA53-8584760C0C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24075C4-01C1-4C73-AA53-8584760C0C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24075C4-01C1-4C73-AA53-8584760C0C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24075C4-01C1-4C73-AA53-8584760C0C01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

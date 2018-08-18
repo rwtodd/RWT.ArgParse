@@ -6,11 +6,19 @@ namespace RWT.ArgParse
 {
     public class ArgParser
     {
+        /// <summary>
+        /// the number of extras that are required and allowed during the parse.
+        /// Fewer extras than the required amount will cause an exception.
+        /// More extras than the allowed amount will cause an exception.
+        /// </summary>
+        public (int Required, int Allowed) ExtrasRange { get; set; }
 
         private readonly Dictionary<String, Switch> Switches;
+
         public ArgParser(params Switch[] args)
         {
             Switches = args.ToDictionary(sw => sw.Name);
+            ExtrasRange = (Required: 0, Allowed: Int32.MaxValue);
         }
 
         /// <summary>
@@ -18,12 +26,13 @@ namespace RWT.ArgParse
         /// </summary>
         /// <param name="name">the name of the switch to activate</param>
         /// <param name="arg">the string argument to give the switch (default null)</param>
-        public void ActivateSwitch(String name, String arg=null)
+        public void ActivateSwitch(String name, String arg = null)
         {
-            if(Switches.TryGetValue(name, out var sw))
+            if (Switches.TryGetValue(name, out var sw))
             {
                 sw.Accept(this, arg);
-            } else
+            }
+            else
             {
                 throw new ArgParseException($"<{name}> could not activate: it is not a switch!");
             }
@@ -50,11 +59,11 @@ namespace RWT.ArgParse
                     if (s.NeedsArg)
                     {
                         if (idx == alen) throw new ArgParseException($"Switch <{s.Name}> expects an argument!");
-                        s.Accept(this,args[idx++]);
+                        s.Accept(this, args[idx++]);
                     }
                     else
                     {
-                        s.Accept(this,null);
+                        s.Accept(this, null);
                     }
                 }
                 else
@@ -62,6 +71,13 @@ namespace RWT.ArgParse
                     extras.Add(hd);
                 }
             }
+
+            // check that the extras are in the [required,allowed] range:
+            var ecnt = extras.Count;
+            if (ecnt < ExtrasRange.Required)
+                throw new ArgParseException($"Not enough arguments (got {ecnt} but need {ExtrasRange.Required})!");
+            if (ecnt > ExtrasRange.Allowed)
+                throw new ArgParseException($"Too many arguments (got {ecnt} when maximum is {ExtrasRange.Allowed})!");
 
             // now that we are out of arguments, apply defaults to any we haven't seen.
             foreach (var s in Switches.Values)
@@ -87,7 +103,7 @@ namespace RWT.ArgParse
                 if (rhs.StartsWith("<"))
                 {
                     var endArg = rhs.IndexOf('>') + 1;
-                    lhs = $"{lhs} {rhs.Substring(0,endArg).Trim()}";
+                    lhs = $"{lhs} {rhs.Substring(0, endArg).Trim()}";
                     rhs = rhs.Substring(endArg).TrimStart();
                 }
                 if (lhs.Length <= 5)
