@@ -7,6 +7,7 @@
     <RepositoryUrl>https://github.com/rwtodd/CSharp.ArgParse</RepositoryUrl>
     <Version>1.0.1</Version>
     <PackageId>RWT.ArgParse</PackageId>
+    <AssemblyName>RWT.ArgParse</AssemblyName>
   </PropertyGroup>
 
 </Project>
